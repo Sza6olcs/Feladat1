@@ -11,15 +11,44 @@
         flex-direction: column; 
         align-items: center; background-color: #e4e4e4; 
         } 
-    .image { width: 200px; margin: 10px 0; transition: all 3s; } 
-    .image1 { border: #e91b1b; transform: scale(1.2); }
-    .image2 { transform: skewY(20deg); transition-delay: 2s; }
-    .image3 { transform: rotate(30deg); }
-    .image1:hover { width: 250px; border: 20px solid red;} 
+    .image { width: 150px; margin: 30px ; transition: all 3s; } 
+    .image1 { border: #e91b1b; transform: scale(1.2); border-radius: 10px;}
+    .image2 { transform: skewY(20deg); transition-delay: 2s; border-radius: 10px;}
+    .image3 { transform: rotate(30deg); border-radius: 10px;}
+    .image1:hover { width: 175px; border: 20px solid red;} 
     .image2:hover { transform: skew(0deg) ; transition-delay: 2s; border: 20px solid red; } 
-    .image3:hover { transform: rotate(0deg); transition-timing-function: ease-out; border: 20px solid   red;} 
+    .image3:hover { transform: rotate(0deg); 
+        transition-timing-function: ease-in; 
+        border: 20px solid red; 
+        border-radius: 10px;} 
+    .szoveg { 
+        width: 60%; 
+        margin: 10px; 
+        padding: 10px; 
+        background-color: #e91b1b; 
+        color: white; 
+        font-size: 20px; 
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif; 
+        text-align: center; 
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px black;
+        }
+
+        .szoveg h1 { 
+            font-size: 30px; 
+            font-weight: bold; 
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif; 
+            color: red; 
+            background-color: white; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            width: 100%; 
+            text-align: center; 
+            text-shadow: black 5px 2px 5px;
+            border-radius: 10px;
+        }
     header { 
-        font-size: 2em; 
+        font-size: 55px; 
         font-weight: normal; 
         font-family: fantasy;
         color: white; 
@@ -28,8 +57,12 @@
         margin-bottom: 10px; 
         width: 100%; 
         text-align: center; 
+        text-shadow: black 10px 5px 5px;
         }
         #yan {
+            text-anchor: middle;
+            display: flex; 
+            flex-direction: column;
             font-size: 50px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
             font-style: italic; 
@@ -38,28 +71,48 @@
             background-color: #e91b1b;
             color: thistle;
             position: fixed; left: 10px; top: 100px; padding: 10px; border-radius: 10px;
+            box-shadow: 5px 5px 5px black;
+            text-align: justify;
         }
-        .arrow { 
-            width: 200px; 
-            height: 100px; 
-            border: 1px solid black; 
-            margin: 10px; 
-            padding: 10px; 
-            background-color: #e91b1b; 
-            border-radius: 10px; 
-            box-shadow: 5px 5px 5px black; 
-            }
+        
+           
+            .arrow { 
+                margin: 0 auto;
+                position: fixed; top: 100px; left: 200px;
+                width: 250px;
+                height: 100px;
+                width: 200px; 
+                }
+                .arrow path { 
+                    stroke-dasharray: 10; 
+                    stroke-dashoffset: 10; 
+                    animation: dash 5s linear infinite; 
+                    } 
+                    @keyframes dash { 
+                        to { 
+                            stroke-dashoffset: 0; 
+                            } 
+                        }
         
         </style> 
-        <svg class="arrow">
-            <circle cx="100" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-            <rect x="10" y="10" width="100" height="100" stroke="black" stroke-width="3" fill="blue" />
-        </svg>
+        
     </head> 
     <body> 
+        <svg class="arrow">
+            <path d="M 10 50 L 190 50 M 190 50 L 150 10 M 190 50 L 150 90" 
+            stroke="black" 
+            stroke-width="6" 
+            fill="black" />
+        </svg>
         <header>
             Kínai prémium autómárka
         </header>
+
+        <div class="szoveg">
+            <h1>Üdvözöljük a Yangwang oldalán!</h1>
+            <article> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio nobis consequuntur libero unde, nulla nemo dolor repudiandae ratione ducimus repellendus sint doloribus necessitatibus, quibusdam natus, soluta labore aut debitis vel animi et mollitia. Pariatur aut, laborum fugit amet eius officia libero minus doloribus sint quae ducimus dignissimos porro voluptatem iusto tenetur voluptates ipsam laudantium vitae deserunt, minima corporis? Quae doloribus libero hic reiciendis culpa, commodi rerum tenetur, molestiae non praesentium dolor accusamus at quia ipsam explicabo sunt totam quis sequi adipisci ratione eos. Blanditiis, earum iusto saepe delectus ex corrupti iste laborum accusamus nesciunt tempora, exercitationem dolore, fugiat hic quos perferendis eum ipsam voluptatum commodi dicta voluptatem dolorum. Quibusdam, laboriosam incidunt. </article>
+            
+        </div>
         
 
         <div class="image">
@@ -70,4 +123,5 @@
         <div id="yan">
             Yangwang
         </div>
+        
     </body>
